@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VIP Scale Monitor</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-title">VIP Scale Monitor</span>
+      <div class="brand-deco">
+        <!-- decorative blocks -->
+        <svg width="120" height="60" viewBox="0 0 120 60" aria-hidden>
+          <rect x="0" y="0" width="120" height="60" rx="6" fill="#f89b3a"/>
+          <rect x="88" y="0" width="32" height="60" fill="#10a37f"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="left-decor" aria-hidden>
+      <!-- stack of shapes left -->
+      <div class="stack">
+        <div class="circle"></div>
+        <div class="circle small"></div>
+        <div class="circle small"></div>
+      </div>
+      <div class="blocks">
+        <div class="block teal"><svg class="icon" viewBox="0 0 24 24"><path fill="#fff" d="M15.5 10.5 10 16l-3-3 1.4-1.4L10 13.2z"/></svg></div>
+        <div class="block blue"></div>
+      </div>
+    </div>
+
+    <section class="center">
+      <h1 class="question">Apakah hari ini sudah<br/>monitor infus?</h1>
+
+      <div class="controls" role="group" aria-label="Tindakan monitor">
+        <button id="btn-monitor" class="btn orange">Monitor</button>
+        <button id="btn-log" class="btn yellow">Riwayat Log</button>
+        <button id="btn-demo" class="btn teal">Demonstrasi</button>
+      </div>
+
+      <p class="hint">Gunakan tombol "Monitor" untuk mencatat monitoring; riwayat disimpan di browser.</p>
+    </section>
+
+    <div class="right-decor" aria-hidden>
+      <!-- simple decorative stack -->
+      <div class="right-stack">
+        <div class="square top"></div>
+        <div class="tri"></div>
+        <div class="arch"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Panels -->
+  <aside id="monitor-panel" class="panel hidden" aria-hidden="true" role="dialog" aria-label="Monitor">
+    <div class="panel-inner">
+      <h2>Catat Monitor Infus</h2>
+      <label for="patient" class="label">Nama / ID Pasien (opsional)</label>
+      <input id="patient" class="input" placeholder="Contoh: Pasien A / 12345" />
+      <div class="panel-actions">
+        <button id="save-monitor" class="btn teal">Catat</button>
+        <button id="cancel-monitor" class="btn ghost">Batal</button>
+      </div>
+    </div>
+  </aside>
+
+  <aside id="log-panel" class="panel hidden" aria-hidden="true" role="dialog" aria-label="Riwayat Log">
+    <div class="panel-inner">
+      <h2>Riwayat Monitor</h2>
+      <ul id="log-list" class="log-list" aria-live="polite"></ul>
+      <div class="panel-actions">
+        <button id="clear-log" class="btn ghost">Hapus Riwayat</button>
+        <button id="close-log" class="btn ghost">Tutup</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
